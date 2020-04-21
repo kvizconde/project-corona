@@ -2,6 +2,9 @@
 
 This simple **Covid 19** application was built with Flask.
 <br>
+
+**Link**: http://project-corona.herokuapp.com/
+
 <br>
 
 I built this application with the intention of learning Flask and Jinja template engine...
