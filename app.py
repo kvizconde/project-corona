@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-import requests
+import requests, os
 
 app = Flask(__name__)
 
@@ -44,7 +44,7 @@ def get_emoji(url):
     return emoji
 
 
-@app.route("/")
+@app.route("")
 def index():
     country = get_countries(url_countries)
     emoji = get_emoji(url_emoji)
@@ -52,5 +52,6 @@ def index():
     return render_template("index.html", country=country, emoji=emoji)
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 33507))
+    app.run(debug=True, port=port)

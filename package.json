@@ -4,7 +4,7 @@
   "description": "covid-19 landing page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "python app.py"
   },
   "keywords": [
     "corona",
