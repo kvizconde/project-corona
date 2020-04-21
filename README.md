@@ -1,11 +1,7 @@
 # Project Corona 😷
 
+This simple <span style="color: red;">**Covid 19**</span> application was built with Flask.
 <br>
-<p>
-This simple
-<span style="color: red;">**COVID 19**</span>
- application was built with Flask.
-</p>
 <br>
 
 I built this application with the intention of learning Flask and Jinja template engine...also because Python 🐍 is AWESOME!
