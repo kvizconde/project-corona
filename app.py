@@ -1,8 +1,13 @@
 from flask import Flask, render_template, jsonify
-import requests, os
+import requests
 
 app = Flask(__name__)
 
+ENV = "dev"
+if ENV == "dev":
+    app.debug = True
+else:
+    app.debug = False
 
 url_countries = "https://coronavirus-19-api.herokuapp.com/countries"
 
@@ -53,5 +58,4 @@ def index():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 33507))
-    app.run(debug=True, port=port)
+    app.run()
