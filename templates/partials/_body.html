@@ -19,35 +19,35 @@
     </div>
 
     <div id="c" class="control center-column">
-      <div class="select is-multiple is-medium">
-        <select multiple size="3">
+      <div id="bulmaSelect" class="select is-multiple is-medium">
+        <select multiple size="3" id="selectValue" onchange="extractValue()">
           {% for c in country %}
           {% if c["country"] == "World" %}
-          <option id="initialClick" selected
+          <option id="initialClick" selected value='{{ c }}, '
             onclick='extractCountry( {{ c|tojson }} )'>World 🌎
           </option>
           {% endif %}
           {% for e in emoji %}
           {% if e["name"] == c["country"] %}
-          <option class="onTouch"
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
             onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
             {{ c["country"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "United States" and c["country"] == "USA" %}
-          <option class="onTouch"
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
             onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
             {{ e["name"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "United Kingdom" and c["country"] == "UK" %}
-          <option class="onTouch"
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
             onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
             {{ e["name"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "South Korea" and c["country"] == "S. Korea" %}
-          <option class="onTouch"
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
             onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
             South Korea
             {{ e["emoji"] }}</option>
