@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block content %}
+<!-- hero -->
+<section class="hero is-fullheight">
+  <!-- hero-nav -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div
+          class="navbar-brand"
+          style="justify-content: center;
+          flex-grow: 1;
+          margin-left: 1px;"
+        >
+          <a class="navbar-item" href="https://news.google.com/covid19/map" target="_blank">
+            <h1 class="is-size-3 is-uppercase">😷 covid-19</h1>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- /hero-nav -->
+
+  <!-- hero-body -->
+  <div class="hero-body">
+    <div class="container has-text-centered is-fluid bg-transparent">
+      {% include 'partials/_body.html' %}
+    </div>
+  </div>
+  <!-- /hero-body -->
+
+  <!-- hero-foot -->
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li>
+            <a href="https://github.com/javieraviles/covidAPI" target="_blank">DATA 📈</a>
+          </li>
+          <li>
+            <a href="https://github.com/risan/country-flag-emoji-json" target="_blank">FLAGS 🇨🇦</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/KevinVizconde" target="_blank">
+              #KV &nbsp;<i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- /hero-foot -->
+<!-- /hero -->
+{% endblock %}

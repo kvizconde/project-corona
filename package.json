@@ -1,0 +1,19 @@
+{
+  "name": "project-corona",
+  "version": "1.0.0",
+  "description": "covid-19 landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "corona",
+    "virus",
+    "covid19"
+  ],
+  "author": "Kevin Vizconde",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.8.0"
+  }
+}

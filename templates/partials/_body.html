@@ -1,0 +1,71 @@
+<!-- .hero-body -->
+<main class="center" style="padding: 2rem;">
+  <div id="grid" style="width: 768px;">
+    <div id="a" class="center-column">
+      <p class="title has-text-white">
+        <span id="cases"></span>
+      </p>
+      <p class="subtitle has-text-white is-7">Total Number of Cases</p>
+    </div>
+
+    <div id="b" class="center-column rightBorder">
+      <p class="title has-text-white is-size-5-mobile">
+        <span class="is-size-5">💪</span>
+        <span id="recovered"></span>
+      </p>
+      <p class="subtitle has-text-white is-7">Recovered</p>
+      <p class="has-text-white is-size-6-mobile is-size-4" id="recoverPercent">
+      </p>
+    </div>
+
+    <div id="c" class="control center-column">
+      <div class="select is-multiple is-medium">
+        <select multiple size="3">
+          {% for c in country %}
+          {% if c["country"] == "World" %}
+          <option id="initialClick" selected
+            onclick='extractCountry( {{ c|tojson }} )'>World 🌎
+          </option>
+          {% endif %}
+          {% for e in emoji %}
+          {% if e["name"] == c["country"] %}
+          <option class="onTouch"
+            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+            {{ c["country"] }} {{ e["emoji"] }}
+          </option>
+
+          {% elif e["name"] == "United States" and c["country"] == "USA" %}
+          <option class="onTouch"
+            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+            {{ e["name"] }} {{ e["emoji"] }}
+          </option>
+
+          {% elif e["name"] == "United Kingdom" and c["country"] == "UK" %}
+          <option class="onTouch"
+            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+            {{ e["name"] }} {{ e["emoji"] }}
+          </option>
+
+          {% elif e["name"] == "South Korea" and c["country"] == "S. Korea" %}
+          <option class="onTouch"
+            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+            South Korea
+            {{ e["emoji"] }}</option>
+
+          {% endif %} {% endfor %} {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div id="d" class="center-column leftBorder">
+      <p class="title has-text-white is-size-5-mobile">
+        <span class="is-size-5">😢</span>
+        <span id="deaths"></span>
+      </p>
+      <p class="subtitle is-7 has-text-white">Deaths</p>
+      <p class="has-text-white is-size-6-mobile is-size-4" id="deathPercent">
+      </p>
+    </div>
+  </div>
+</main>
+<!-- /.hero-body -->
