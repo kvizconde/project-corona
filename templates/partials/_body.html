@@ -29,26 +29,22 @@
           {% endif %}
           {% for e in emoji %}
           {% if e["name"] == c["country"] %}
-          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
-            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}">
             {{ c["country"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "United States" and c["country"] == "USA" %}
-          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
-            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}">
             {{ e["name"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "United Kingdom" and c["country"] == "UK" %}
-          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
-            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}">
             {{ e["name"] }} {{ e["emoji"] }}
           </option>
 
           {% elif e["name"] == "South Korea" and c["country"] == "S. Korea" %}
-          <option class="onTouch" value="{{ c }}, {{ e.emoji }}"
-            onclick='extractCountry( {{ c|tojson }}, {{ e.emoji|tojson }} )'>
+          <option class="onTouch" value="{{ c }}, {{ e.emoji }}">
             South Korea
             {{ e["emoji"] }}</option>
 
