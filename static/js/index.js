@@ -56,9 +56,10 @@ function extractValue() {
   extract = extract.split(',');
 
   const extractCases = extract[1].split(': ')[1];
+
   const extractRecover = extract[5].split(': ')[1];
   const exctractDeaths = extract[3].split(': ')[1];
-  const extractFlag = extract[12].split(' ')[1] || '🌎';
+  const extractFlag = extract[extract.length - 1];
 
   const cases = document.getElementById('cases');
   const recovered = document.getElementById('recovered');
