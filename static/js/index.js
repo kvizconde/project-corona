@@ -59,11 +59,17 @@ function extractValue() {
 
   const extractRecover = extract[5].split(': ')[1];
   const exctractDeaths = extract[3].split(': ')[1];
-  const extractFlag = extract[extract.length - 1];
+  let extractFlag = extract[extract.length - 1];
+
+  const worldEmoji = '🌎';
 
   const cases = document.getElementById('cases');
   const recovered = document.getElementById('recovered');
   const deaths = document.getElementById('deaths');
+
+  if (extractFlag === ' ') {
+    extractFlag = worldEmoji;
+  }
 
   cases.textContent =
     extractCases !== 'None'
